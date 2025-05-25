@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Guian's Hotel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="bootstrap-5.3.6-dist/css/bootstrap.min.css">
+<script src="bootstrap-5.3.6-dist/js/bootstrap.bundle.min.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/index_style.css" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="popup.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <img src="logo.png" alt="Hotel Bliss Logo" class="image" />
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#room">Rooms</a></li>
+          <li class="nav-item"><a class="nav-link" href="#service">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero section / Front section -->
+     <header class="hero text-center text-white" id="home" style="padding-top: 80px;">
+    <div class="container hero-bg rounded">
+      <h1 class="display-4">Welcome to Guian's Hotel</h1>
+      <p class="lead">Luxury & Comfort at Your Stay</p>
+      <div class="cont">
+        <div class="products-container">
+          <div class="product" data-name="p-1">
+            <!-- Book Now button triggers modal -->
+            <a href="#" class="btn btn-primary btn-lg mt-3" data-bs-toggle="modal" data-bs-target="#authModal">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Auth Modal with Login & Sign Up Tabs -->
+  <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="authModalLabel">Welcome</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs mb-3" id="authTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true">Login</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="signup-tab" data-bs-toggle="tab" data-bs-target="#signup" type="button" role="tab" aria-controls="signup" aria-selected="false">Sign Up</button>
+            </li>
+          </ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content" id="authTabContent">
+            <!-- Login Form -->
+            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+               <form action="home.html" method="post" id="loginForm" >
+                <input type="email" class="form-control mb-3" placeholder="Email" id="loginEmail" required />
+                <input type="password" class="form-control mb-3" placeholder="Password" id="loginPassword" required />
+                <button class="btn btn-primary w-100" id="loginBtn" type="submit"><a href="home.html" class="log"> Login</a></button>
+              </form>
+            </div>
+
+            <!-- Sign Up Form -->
+            <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="signup-tab">
+              <form action="home.html" method="post" id="signupForm" >
+                <input type="text" class="form-control mb-3" placeholder="Full Name" id="signupName" required />
+                <input type="email" class="form-control mb-3" placeholder="Email" id="signupEmail" required />
+                <input type="password" class="form-control mb-3" placeholder="Password" id="signupPassword" required />
+                <input type="password" class="form-control mb-3" placeholder="Confirm Password" id="signupConfirmPassword" required />
+                <button class="btn btn-success w-100" id="signupBtn" type="submit"><a href="home.html" class="log">Sign Up</a></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About -->
+   <!-- About Section with Modal Details -->
+  <section class="about py-5 bg-light text-center" id="about">
+    <div class="container">
+      <h2 class="mb-4">About Us</h2>
+      <p class="lead mb-5">
+        Guian's Hotel is your perfect escape from the everyday. Enjoy luxury rooms,
+        exquisite dining, and unforgettable hospitality in the heart of the city.
+      </p>
+      <div class="row g-4">
+        <!-- Accommodation -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="img/accomondation.jfif" class="card-img-top" alt="Accommodation">
+            <div class="card-body">
+              <h5 class="card-title">Accommodation</h5>
+              <p class="card-text">Experience comfort in our luxurious rooms and suites.</p>
+              <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalAccommodation">View Details</button>
+            </div>
+          </div>
+        </div>
+        <!-- Facilities & Amenities -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="img/amenities.jpg" class="card-img-top" alt="Facilities & Amenities">
+            <div class="card-body">
+              <h5 class="card-title">Facilities & Amenities</h5>
+              <p class="card-text">Enjoy our pool, spa, fitness center, and more enjoyment day in our hotel.</p>
+              <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalFacilities">View Details</button>
+            </div>
+          </div>
+        </div>
+        <!-- Guest Services -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="img/service.jpg" class="card-img-top" alt="Guest Services">
+            <div class="card-body">
+              <h5 class="card-title">Guest Services</h5>
+              <p class="card-text">We offer 24/7 front desk, room service, and concierge support.</p>
+              <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modalServices">View Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal: Accommodation -->
+  <div class="modal fade" id="modalAccommodation" tabindex="-1" aria-labelledby="modalAccommodationLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalAccommodationLabel">Accommodation</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="img/accomondation.jfif" class="img-fluid mb-3" alt="Accommodation">
+          <p>Our hotel offers a variety of room types including Deluxe, Double, Single, and VIP suites. Each room is equipped with modern amenities, plush bedding, free Wi-Fi, smart TV, and complimentary toiletries. Whether you're on business or vacation, comfort is guaranteed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Facilities -->
+  <div class="modal fade" id="modalFacilities" tabindex="-1" aria-labelledby="modalFacilitiesLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalFacilitiesLabel">Facilities & Amenities</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="img/amenities.jpg" class="img-fluid mb-3" alt="Facilities & Amenities">
+          <p>Relax in our rooftop infinity pool, unwind at the full-service spa, or stay active in our state-of-the-art fitness center. We also offer conference rooms, business center access, and complimentary high-speed internet throughout the hotel.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Guest Services -->
+  <div class="modal fade" id="modalServices" tabindex="-1" aria-labelledby="modalServicesLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalServicesLabel">Guest Services</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="img/service.jfif" class="img-fluid mb-3" alt="Guest Services">
+          <p>From airport transfers to in-room dining, our guest services team is available around the clock. We offer daily housekeeping, luggage storage, wake-up calls, travel assistance, and personalized concierge services to make your stay seamless.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <section class="rooms py-5" id="room">
+  <div class="container">
+    <h2 class="text-center mb-4">Our Rooms</h2> 
+
+    <!-- Room Categories -->
+    <div class="text-center mb-4">
+      <button class="btn btn-outline-primary m-2" onclick="showCategory('single')">Standard Room</button>
+      <button class="btn btn-outline-primary m-2" onclick="showCategory('double')">Deluxy Room</button>
+      <button class="btn btn-outline-primary m-2" onclick="showCategory('vip')">VIP Room</button>
+    </div>
+
+    <!-- Room Cards Container -->
+    <div id="roomCards" class="row g-4 justify-content-center"></div>
+  </div>
+</section>
+
+
+
+  <!-- Services -->
+  <section class="services bg-light py-5 text-center" id="service">
+    <div class="container">
+      <h2 class="mb-4">Our Services</h2>
+      <div class="row">
+        <div class="col-md-3 mb-4">
+          <i class="bi bi-wifi" style="font-size: 2rem;"></i>
+          <h5 class="mt-2">Free WiFi</h5>
+        </div>
+        <div class="col-md-3 mb-4">
+          <i class="bi bi-cup-hot" style="font-size: 2rem;"></i>
+          <h5 class="mt-2">Breakfast</h5>
+        </div>
+        <div class="col-md-3 mb-4">
+          <i class="bi bi-car-front" style="font-size: 2rem;"></i>
+          <h5 class="mt-2">Free Parking</h5>
+        </div>
+        <div class="col-md-3 mb-4">
+          <i class="bi bi-star-fill" style="font-size: 2rem;"></i>
+          <h5 class="mt-2">5-Star Service</h5>
+        </div>
+        <div class="col-md-3 mb-4">
+          <i class="bi bi-house" style="font-size: 2rem;"></i>
+          <h5 class="mt-2">Housekeeping</h5>
+        </div>
+        <div class="col-md-3 mb-4">
+          <i class="bi bi-door-open" style="font-size: 2rem;"></i>
+          <h5 class="mt-2">Room Service</h5>
+        </div>
+        <div class="col-md-3 mb-4">
+          <i class="bi bi-person-lines-fill" style="font-size: 2rem;"></i>
+          <h5 class="mt-2">Concierge</h5>
+        </div>
+        <div class="col-md-3 mb-4">
+          <i class="bi bi-bus-front" style="font-size: 2rem;"></i>
+          <h5 class="mt-2">Transport</h5>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <!-- Contact Section -->
+<section id="contact" class="py-5" data-aos="fade-up">
+  <div class="container">
+    <h2 class="text-center mb-4">Contact Us</h2>
+    <form class="mx-auto" style="max-width: 500px;">
+      <input type="text" class="form-control mb-2" placeholder="Your Name">
+      <input type="email" class="form-control mb-2" placeholder="Your Email">
+      <textarea class="form-control mb-2" placeholder="Message"></textarea>
+      <button class="btn btn-success w-100" type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center p-4">
+    <p class="mb-0">&copy; 2025 Guian's Hotel. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Swiper JS (optional - remove if not used) -->
+  <!--
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+    // Remove this if no Swiper container with .mySwiper exists
+    var swiper = new Swiper(".mySwiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      loop: true,
+    });
+  </script>
+  -->
+<!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const sections = document.querySelectorAll("section[id], header#home");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      const scrollY = window.pageYOffset;
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.offsetHeight;
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${current}`) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
+
+
+  <script>
+    /*Room Image section*/
+  const rooms = {
+    single: [
+      { title: "Standard Room", img: "img/4.jfif", desc: "Comfortable room for one with free breakfast." },
+      { title: "Standard Room", img: "img/5.jfif", desc: "Comfortable room for one with free breakfast." },
+      { title: "Standard Room", img: "img/6.jfif", desc: "Budget-friendly, clean and cozy free breakfast." }
+    ],
+    double: [
+      { title: "Deluxy Room", img: "img/12.jfif", desc: "Spacious for two guests with amenities." },
+      { title: "Deluxy Room", img: "img/13.jfif", desc: "Spacious for two guests with amenities." },
+      { title: "Deluxy Room", img: "img/14.jfif", desc: "Romantic decor with city view." }
+    ],
+    vip: [
+      { title: "VIP Room", img: "img/20.jfif", desc: "5-star experience with premium service." },
+      { title: "VIP Room", img: "img/21.jfif", desc: "5-star experience with premium service." },
+      { title: "VIP Room", img: "img/22.jfif", desc: "Top-tier room with VIP privileges." }
+    ]
+  };
+
+function showCategory(type) {
+  const container = document.getElementById("roomCards");
+  container.innerHTML = ""; // clear previous
+
+  // Create and append the close icon
+  const closeIconDiv = document.createElement("div");
+  closeIconDiv.className = "text-end mb-3";
+  closeIconDiv.innerHTML = `
+    <button class="btn-close" aria-label="Close" onclick="closeRoomCards()" style="float: right;"></button>
+  `;
+  container.appendChild(closeIconDiv);
+
+  // Add room cards
+  rooms[type].forEach(room => {
+    const card = document.createElement("div");
+    card.className = "col-md-4";
+    card.innerHTML = `
+      <div class="card h-100 shadow-sm">
+        <img src="${room.img}" class="card-img-top" alt="${room.title}">
+        <div class="card-body text-center">
+          <h5 class="card-title">${room.title}</h5>
+          <p class="card-text">${room.desc}</p>
+          <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#authModal">Reserve Now</a> 
+        </div>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function closeRoomCards() {
+  document.getElementById("roomCards").innerHTML = "";
+}
+
+
+  
+</script>
+
+
+  <script>
+    // Login button handler
+    document.getElementById('loginBtn').addEventListener('click', function () {
+      alert('Login Success');
+      // Add your login logic here
+    });
+
+    // Sign Up button handler
+    document.getElementById('signupBtn').addEventListener('click', function () {
+      alert('Sign Up clicked');
+      // Add your signup logic here
+    });
+  </script>
+</body>
+</html>
